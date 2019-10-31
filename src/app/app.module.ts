@@ -32,6 +32,7 @@ import { LoginLayoutComponent } from './layouts/login-layout/login-layout.compon
     ToastrModule.forRoot(),
     FooterModule,
     FixedPluginModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
