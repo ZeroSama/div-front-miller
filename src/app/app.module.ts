@@ -14,6 +14,10 @@ import { AppRoutes } from './app.routing';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 
+import { ApiService } from './api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -24,6 +28,8 @@ import { LoginLayoutComponent } from './layouts/login-layout/login-layout.compon
   ],
   imports: [
     BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(AppRoutes,{
       useHash: true
     }),
@@ -34,7 +40,7 @@ import { LoginLayoutComponent } from './layouts/login-layout/login-layout.compon
     FixedPluginModule
 
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
