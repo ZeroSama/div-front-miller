@@ -16,11 +16,11 @@ import { LoginComponent } from 'app/pages/login/login.component';
 
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'gastolist', component: GastolistComponent},
-    { path: 'gastocategorialist', component: GastocategorialistComponent},
-    { path: 'fontederendalist', component: FontederendalistComponent},
-    { path: 'creditocartaolist', component: CreditocartaolistComponent},
-    { path: 'financiamentolist', component: FinanciamentolistComponent},
+    { path: '/#/admin/gastolist', component: GastolistComponent},
+    { path: 'admin/gastocategorialist', component: GastocategorialistComponent},
+    { path: 'admin/fontederendalist', component: FontederendalistComponent},
+    { path: 'admin/creditocartaolist', component: CreditocartaolistComponent},
+    { path: 'admin/financiamentolist', component: FinanciamentolistComponent},
 
     { path: 'creditocartaodetrail', component: CreditocartaodetrailComponent},
     { path: 'financiamentodetrail', component: FinanciamentodetrailComponent},
