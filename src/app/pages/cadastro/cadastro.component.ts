@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { ApiService } from 'app/api.service';
+import { Usuario } from 'app/model/usuario';
 
 @Component({
   selector: 'app-cadastro',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor() { }
+  usuario: any;
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.usuario = {};
   }
 
+  cadastro() {
+    this.api.cadastraUsuario(this.usuario).subscribe(resposta => {
+      console.log(resposta);
+    });
+
+  }
 }
