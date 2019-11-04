@@ -35,29 +35,30 @@
   </div>
 
   <div class="flex-sb-m w-full p-b-48">
-    <div class="contact100-form-checkbox">
+    <!-- <div class="contact100-form-checkbox">
       <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
       <label class="label-checkbox100" for="ckb1">
         Remember me
       </label>
-    </div>
+    </div> -->
 
     <div class="col-md-12">
       <div class="col-md-6">
-        <a href="#" class="txt3">
-          Esqueci a senha
+        <a href="#" class="txt3">Esqueci a senha
         </a>
       </div>
-      <div class="col-md-6">
+      <!-- <div class="col-md-6">
         <a href="cadastra.html" class="txt3">
           Criar um conta
         </a>
-      </div>
+      </div> -->
     </div>
   </div>
 
   <div class="container-login100-form-btn">
-    <button class="login100-form-btn" type="submit" [disabled]="frm.invalid" mat-button color="primary">Entrar</button>
+    <button class="login100-form-btn" type="submit" [disabled]="frm.invalid" mat-button color="primary"  [routerLink]="">Entrar</button>
+    <button class="login100-form-btn" type="submit" [disabled]="frm.invalid" mat-button color="primary" routerLink="/#/cadastro" routerLinkActive="active">Criar um Conta</button>
+
   </div>
 </form>
 
