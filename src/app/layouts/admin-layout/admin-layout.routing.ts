@@ -12,8 +12,6 @@ import { FontederendadetrailComponent } from '../../pages/fontederendadetrail/fo
 import { GastocategoriadetrailComponent } from '../../pages/gastocategoriadetrail/gastocategoriadetrail.component';
 import { GastodetrailComponent } from '../../pages/gastodetrail/gastodetrail.component';
 import { UsuariodetrailComponent } from '../../pages/usuariodetrail/usuariodetrail.component';
-import { LoginComponent } from 'app/pages/login/login.component';
-
 
 export const AdminLayoutRoutes: Routes = [
     { path: '/#/admin/gastolist', component: GastolistComponent},
@@ -27,6 +25,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'fontederendadetrail', component: FontederendadetrailComponent},
     { path: 'gastocategoriadetrail', component: GastocategoriadetrailComponent},
     { path: 'Gastodetrail', component: GastodetrailComponent},
-    { path: 'usuariodetrail', component: UsuariodetrailComponent},
-    { path: 'login', component: LoginComponent}
+    { path: 'usuariodetrail', component: UsuariodetrailComponent}
 ];

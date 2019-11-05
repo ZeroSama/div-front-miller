@@ -44,7 +44,7 @@
 
     <div class="col-md-12">
       <div class="col-md-6">
-        <a href="#" class="txt3">Esqueci a senha
+        <a [routerLink]="['/recuperarsenha']" class="txt3">Esqueci a senha
         </a>
       </div>
       <!-- <div class="col-md-6">
@@ -56,8 +56,8 @@
   </div>
 
   <div class="container-login100-form-btn">
-    <button class="login100-form-btn" type="submit" [disabled]="frm.invalid" mat-button color="primary"  [routerLink]="">Entrar</button>
-    <button class="login100-form-btn" type="submit" [disabled]="frm.invalid" mat-button color="primary" routerLink="/#/cadastro" routerLinkActive="active">Criar um Conta</button>
+    <button class="login100-form-btn" type="submit"  mat-button color="primary"  [routerLink]="['/admin']">Entrar</button>
+    <button class="login100-form-btn" type="submit"  mat-button color="primary" [routerLink]="['/cadastro']" routerLinkActive="active">Criar um Conta</button>
 
   </div>
 </form>

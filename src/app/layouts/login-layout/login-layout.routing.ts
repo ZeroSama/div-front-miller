@@ -7,7 +7,7 @@ import { RecuperasenhaComponent } from '../../pages/recuperasenha/recuperasenha.
 
 export const LoginLayoutRoutes: Routes = [
      { path: '', component: LoginComponent},
-    { path: 'login', component: LoginComponent},
+    // { path: 'login', component: LoginComponent},
     { path: 'cadastro', component: CadastroComponent},
     { path: 'recuperarsenha', component: RecuperasenhaComponent}
 
