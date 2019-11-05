@@ -20,7 +20,6 @@ import { UsuariodetrailComponent } from '../../pages/usuariodetrail/usuariodetra
 
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LoginComponent } from 'app/pages/login/login.component';
 
 @NgModule({
   imports: [
@@ -41,8 +40,7 @@ import { LoginComponent } from 'app/pages/login/login.component';
     FontederendadetrailComponent,
     GastocategoriadetrailComponent,
     GastodetrailComponent,
-    UsuariodetrailComponent,
-    LoginComponent
+    UsuariodetrailComponent
 
   ]
 })
