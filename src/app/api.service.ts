@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UsuarioLogin } from 'app/model/usuario-login';
-import { Usuario } from './model/usuario';
+import { AuthLoginInfo } from 'app/auth/auth-login-info';
+import { SignUpInfo } from 'app/auth/sign-up-info';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,10 @@ apiURL = 'http://localhost:8080';
 
   login(usuario: any) {
     const url = `${this.apiURL}/usuarios/login`;
-    return this.http.post<UsuarioLogin>(url, usuario)
+    return this.http.post<AuthLoginInfo>(url, usuario)
   }
     cadastraUsuario(usuario: any) {
     const url = `${this.apiURL}/usuarios`;
-    return this.http.post<Usuario>(url, usuario);
+    return this.http.post<SignUpInfo>(url, usuario);
   }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { ApiService } from 'app/api.service';
+import { AuthService } from 'app/auth/auth-service.service';
+import { TokenStorageService } from 'app/auth/token-storage.service';
+import { AuthLoginInfo } from 'app/auth/auth-login-info';
 
 @Component({
   selector: 'app-login',
@@ -9,18 +11,45 @@ import { ApiService } from 'app/api.service';
 })
 export class LoginComponent implements OnInit {
 
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+  usuarioTemp: AuthLoginInfo;
   loginForm: FormGroup;
-  usuario: any; 
-  constructor( private api: ApiService) { }
-  //constructor(){}
-  ngOnInit() {
-    this.usuario = {};
+  constructor( private authService: AuthService, private tokenStorage: TokenStorageService) {
   }
 
-  login(fnm: FormGroup) {
-    this.api.login(this.usuario).subscribe(resposta =>{
-      console.log(resposta);
-    });
-     
+  ngOnInit() {
+    this.usuarioTemp = {
+      "email":'',
+      "senha": ''
+    };
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getAuthorities();
+      console.log("Pegou o token");
+      console.log(this.tokenStorage.getToken());
+    }
+  }
+
+  login() {
+    this.authService.attemptAuth(this.usuarioTemp).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUsername(data.username);
+        this.tokenStorage.saveAuthorities(data.authorities);
+        this.reloadPage();
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isLoginFailed = true;
+      }
+    );
+  }
+   reloadPage() {
+    window.location.reload();
   }
 }

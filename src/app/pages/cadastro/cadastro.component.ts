@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { ApiService } from 'app/api.service';
-import { Usuario } from 'app/model/usuario';
+import { AuthService } from 'app/auth/auth-service.service';
+import { SignUpInfo } from 'app/auth/sign-up-info';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,18 +8,35 @@ import { Usuario } from 'app/model/usuario';
   styleUrls: ['./cadastro.component.scss']
 })
 export class CadastroComponent implements OnInit {
+form: any = {};
+  signupInfo: SignUpInfo;
+  isSignedUp = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-  usuario: any;
-  constructor(private api: ApiService) { }
+  constructor(private authService: AuthService) { }
 
-  ngOnInit() {
-    this.usuario = {};
-  }
+  ngOnInit() { }
 
-  cadastro() {
-    this.api.cadastraUsuario(this.usuario).subscribe(resposta => {
-      console.log(resposta);
-    });
+  onSubmit() {
+    console.log(this.form);
 
+    this.signupInfo = new SignUpInfo(
+      this.form.name,
+      this.form.email,
+      this.form.password);
+
+    this.authService.signUp(this.signupInfo).subscribe(
+      data => {
+        console.log(data);
+        this.isSignedUp = true;
+        this.isSignUpFailed = false;
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
 }

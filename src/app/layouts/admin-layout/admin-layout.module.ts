@@ -14,7 +14,7 @@ import { FinanciamentolistComponent } from '../../pages/financiamentolist/financ
 import { CreditocartaodetrailComponent } from '../../pages/creditocartaodetrail/creditocartaodetrail.component';
 import { FinanciamentodetrailComponent } from '../../pages/financiamentodetrail/financiamentodetrail.component';
 import { FontederendadetrailComponent } from '../../pages/fontederendadetrail/fontederendadetrail.component';
-import { GastocategoriadetrailComponent }         from '../../pages/gastocategoriadetrail/gastocategoriadetrail.component';
+import { GastocategoriadetrailComponent } from '../../pages/gastocategoriadetrail/gastocategoriadetrail.component';
 import { GastodetrailComponent } from '../../pages/gastodetrail/gastodetrail.component';
 import { UsuariodetrailComponent } from '../../pages/usuariodetrail/usuariodetrail.component';
 
