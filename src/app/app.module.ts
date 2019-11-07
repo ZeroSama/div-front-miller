@@ -15,8 +15,11 @@ import { AdminLayoutComponent } from 'app/layouts/admin-layout/admin-layout.comp
 import { LoginLayoutComponent } from 'app/layouts/login-layout/login-layout.component';
 
 import { ApiService } from './api.service';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { HttpErrorInterceptor } from 'app/auth/httperrorinterceptor';
 
 
 @NgModule({
@@ -39,7 +42,13 @@ import { FormsModule } from '@angular/forms';
     FixedPluginModule
 
   ],
-  providers: [ApiService],
+  providers: [ApiService,
+    {
+     provide: HTTP_INTERCEPTORS,
+     useClass: HttpErrorInterceptor,
+     multi: true
+   }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
