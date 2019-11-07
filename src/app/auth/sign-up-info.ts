@@ -1,13 +1,11 @@
 export class SignUpInfo {
-    name: string;
+    nome: string;
     email: string;
-    role: string[];
-    password: string;
+    senha: string;
 
-    constructor(name: string, email: string, password: string) {
-        this.name = name;
+    constructor(nome: string, email: string, senha: string) {
+        this.nome = nome;
         this.email = email;
-        this.password = password;
-        this.role = ['ROLE BASIC'];
+        this.senha = senha;
     }
 }

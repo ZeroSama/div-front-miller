@@ -10,7 +10,7 @@
 
 <link rel="stylesheet" type="text/css" href="./assets/css/util.css">
 <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
-      <form class="login100-form validate-form flex-sb flex-w" method="POST" #frm="ngForm" (ngSubmit)="cadastro()">
+      <form class="login100-form validate-form flex-sb flex-w" method="POST" #frm="ngForm" (ngSubmit)="onSubmit(frm)">
         <span class="login100-form-title p-b-32">
 
 Cadastro de Usuário
@@ -19,21 +19,21 @@ Cadastro de Usuário
           Nome
         </span>
         <div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-          <input class="input100" placeholder="Nome" type="text" name="username" [(ngModel)]="usuario.nome">
+          <input class="input100" placeholder="Nome" type="text" name="nome" [(ngModel)]="signupInfo.nome" required>
           <span class="focus-input100"></span>
         </div>
         <span class="txt1 p-b-11">
           E-Mail
         </span>
         <div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-          <input class="input100" placeholder="EMail" type="text" name="email" [(ngModel)]="usuario.email" >
+          <input class="input100" placeholder="EMail" type="text" name="email" [(ngModel)]="signupInfo.email" required>
           <span class="focus-input100"></span>
         </div>
         <span class="txt1 p-b-11">
           Confirmação de E-Mail
         </span>
         <div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-          <input class="input100" placeholder="Confirmação de E-Mail" type="text" name="username" >
+          <input class="input100" placeholder="Confirmação de E-Mail" type="text" >
           <span class="focus-input100"></span>
         </div>
         <span class="txt1 p-b-11">
@@ -43,7 +43,7 @@ Cadastro de Usuário
           <span class="btn-show-pass">
             <i class="fa fa-eye"></i>
           </span>
-          <input class="input100" placeholder="Senha" type="password" name="pass" [(ngModel)]="usuario.senha">
+          <input class="input100" placeholder="Senha" type="password" name="senha" [(ngModel)]="signupInfo.senha" required>
           <span class="focus-input100"></span>
         </div>
         <span class="txt1 p-b-11">
@@ -53,7 +53,7 @@ Cadastro de Usuário
           <span class="btn-show-pass">
             <i class="fa fa-eye"></i>
           </span>
-          <input class="input100" placeholder="Confirmação de Senha" type="password" name="pass" >
+          <input class="input100" placeholder="Confirmação de Senha" type="password"  >
           <span class="focus-input100"></span>
         </div>
         <div class="container-login100-form-btn">
