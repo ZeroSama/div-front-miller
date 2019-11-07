@@ -3,6 +3,8 @@ import { FormGroup } from '@angular/forms';
 import { AuthService } from 'app/auth/auth-service.service';
 import { TokenStorageService } from 'app/auth/token-storage.service';
 import { AuthLoginInfo } from 'app/auth/auth-login-info';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,7 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   usuarioTemp: AuthLoginInfo;
   loginForm: FormGroup;
-  constructor( private authService: AuthService, private tokenStorage: TokenStorageService) {
+  constructor( private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) {
   }
 
   ngOnInit() {
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit {
       this.roles = this.tokenStorage.getAuthorities();
       console.log("Pegou o token");
       console.log(this.tokenStorage.getToken());
+      this.router.navigate(['/admin']);
     }
   }
 
@@ -45,11 +48,15 @@ export class LoginComponent implements OnInit {
       error => {
         console.log(error);
         this.errorMessage = error.error.message;
+        alert(error.msg);
         this.isLoginFailed = true;
       }
     );
   }
    reloadPage() {
     window.location.reload();
+  }
+  logout() {
+    this.tokenStorage.signOut();
   }
 }
