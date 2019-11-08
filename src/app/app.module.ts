@@ -20,6 +20,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { HttpErrorInterceptor } from 'app/auth/httperrorinterceptor';
+import { AuthInterceptor } from './auth/auth-interceptor';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { HttpErrorInterceptor } from 'app/auth/httperrorinterceptor';
      provide: HTTP_INTERCEPTORS,
      useClass: HttpErrorInterceptor,
      multi: true
-   }
+   },
+   { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
