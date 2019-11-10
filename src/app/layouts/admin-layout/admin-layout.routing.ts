@@ -14,16 +14,17 @@ import { GastodetrailComponent } from '../../pages/gastodetrail/gastodetrail.com
 import { UsuariodetrailComponent } from '../../pages/usuariodetrail/usuariodetrail.component';
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'gastolist', component: GastolistComponent},
-    { path: 'admin/gastocategorialist', component: GastocategorialistComponent},
-    { path: 'admin/fontederendalist', component: FontederendalistComponent},
-    { path: 'admin/creditocartaolist', component: CreditocartaolistComponent},
-    { path: 'admin/financiamentolist', component: FinanciamentolistComponent},
+    { path: '/gastolist', component: GastolistComponent},
+    { path: '/gastocategorialist', component: GastocategorialistComponent},
+    { path: '/fontederendalist', component: FontederendalistComponent},
+    { path: '/creditocartaolist', component: CreditocartaolistComponent},
+    { path: '/financiamentolist', component: FinanciamentolistComponent},
 
-    { path: 'creditocartaodetrail', component: CreditocartaodetrailComponent},
-    { path: 'financiamentodetrail', component: FinanciamentodetrailComponent},
-    { path: 'fontederendadetrail', component: FontederendadetrailComponent},
-    { path: 'gastocategoriadetrail', component: GastocategoriadetrailComponent},
-    { path: 'Gastodetrail', component: GastodetrailComponent},
-    { path: 'usuariodetrail', component: UsuariodetrailComponent}
+    { path: '/creditocartaodetrail', component: CreditocartaodetrailComponent},
+    { path: '/financiamentodetrail', component: FinanciamentodetrailComponent},
+    { path: '/fontederendadetrail', component: FontederendadetrailComponent},
+    { path: '/gastocategoriadetrail', component: GastocategoriadetrailComponent},
+    { path: '/Gastodetrail', component: GastodetrailComponent},
+    { path: '/usuariodetrail', component: UsuariodetrailComponent}
+
 ];
