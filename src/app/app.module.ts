@@ -16,12 +16,12 @@ import { LoginLayoutComponent } from 'app/layouts/login-layout/login-layout.comp
 
 import { ApiService } from './api.service';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { HttpErrorInterceptor } from 'app/auth/httperrorinterceptor';
 import { AuthInterceptor } from './auth/auth-interceptor';
-
+import { OrderModule } from 'ngx-order-pipe';
+import { CadastroCategoriaGastoComponent } from './pages/cadastro-categoria-gasto/cadastro-categoria-gasto.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,8 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     NavbarModule,
     ToastrModule.forRoot(),
     FooterModule,
-    FixedPluginModule
+    FixedPluginModule,
+    OrderModule
 
   ],
   providers: [ApiService,

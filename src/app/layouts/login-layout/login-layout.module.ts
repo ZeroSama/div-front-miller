@@ -10,6 +10,8 @@ import { LoginComponent } from '../../pages/login/login.component';
 import { RecuperasenhaComponent } from '../../pages/recuperasenha/recuperasenha.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GastocategorialistComponent } from 'app/pages/gastocategorialist/gastocategorialist.component';
+import { CadastroCategoriaGastoComponent } from 'app/pages/cadastro-categoria-gasto/cadastro-categoria-gasto.component';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     CadastroComponent,
     LoginComponent,
-    RecuperasenhaComponent
+    RecuperasenhaComponent,
+    GastocategorialistComponent,
+    CadastroCategoriaGastoComponent
   ]
 })
 
