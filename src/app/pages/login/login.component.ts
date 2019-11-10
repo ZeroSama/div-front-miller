@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       this.roles = this.tokenStorage.getAuthorities();
       console.log("Pegou o token");
       console.log(this.tokenStorage.getToken());
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/catgasto']);
     }
   }
 
